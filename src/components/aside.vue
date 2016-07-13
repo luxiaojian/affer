@@ -46,10 +46,12 @@
     position: fixed;
     right: 0;
     top: 48px;
+    bottom: 0;
     background: #fff;
-    overflow-y: auto;
+    display: fixed;
     width: 360px;
-    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
     padding: 12px;
     transition: all .3s cubic-bezier(.55,0,.55,.2);
     box-shadow: -1px -1px 1px 1px rgba(0, 0, 0, 0.2);

@@ -39,9 +39,8 @@
 
   .offer {
     max-width: 1280px;
+    margin: 0 auto;
     margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
     position: relative;
   }
 
