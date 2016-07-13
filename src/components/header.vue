@@ -2,7 +2,7 @@
   <header id="header">
     <h1 class="logo">
       <a href="/">
-        <img src="/src/assets/logo.png" alt="logo">
+        <img src="http://luxiaojian.qiniudn.com/logo.png" alt="logo">
       </a>
     </h1>
     <button class="topbar-toggle" @click="showAside = !showAside">
