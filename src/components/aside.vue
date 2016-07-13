@@ -75,7 +75,7 @@
           onrendered: function(canvas) {
             var myImage = canvas.toDataURL('image/png');
             window.open(myImage);
-            this.isPreview = false;
+            location.reload();
           }
         });
       }
