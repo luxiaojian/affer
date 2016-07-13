@@ -23,7 +23,7 @@ cooking.set({
   hash: true,
   sourceMap: true,
   chunk: 'vendor',
-  publicPath: '/dist',
+  publicPath: './dist',
   assetsPath: 'static',
   urlLoaderLimit: 10000,
   extractCSS: '[name].[contenthash:7].css',
