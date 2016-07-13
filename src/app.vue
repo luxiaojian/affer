@@ -1,7 +1,7 @@
 <template>
   <eleme-header :show-aside.sync="showAside" v-if="!isPreview"></eleme-header>
   <div class="offer">
-    <img src="/src/assets/bg.png" alt="offer模板">
+    <img src="http://luxiaojian.qiniudn.com/bg.png" alt="offer模板">
     <div class="content">
       <div class="username primary" v-text="data.username"></div>
       <div class="department primary" v-text="data.department"></div>

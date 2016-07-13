@@ -47,6 +47,7 @@
     right: 0;
     top: 48px;
     background: #fff;
+    overflow-y: auto;
     width: 360px;
     height: 100vh;
     padding: 12px;
@@ -68,7 +69,7 @@
         this.isPreview = true;
         window.html2canvas(document.body, {
           logging: true,
-          allowTaint: true,
+          useCORS: true,
           onrendered: function(canvas) {
             var myImage = canvas.toDataURL('image/png');
             window.open(myImage);

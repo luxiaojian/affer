@@ -24,8 +24,8 @@ cooking.set({
   sourceMap: true,
   chunk: 'vendor',
   publicPath: './dist',
-  assetsPath: 'static',
-  urlLoaderLimit: 10000,
+  assetsPath: '/dist',
+  urlLoaderLimit: 100000,
   extractCSS: '[name].[contenthash:7].css',
   extends: ['vue', 'lint']
 });
