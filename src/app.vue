@@ -1,7 +1,7 @@
 <template>
   <eleme-header :show-aside.sync="showAside" v-if="!isPreview"></eleme-header>
   <div class="offer">
-    <img src="http://7qna7i.com1.z0.glb.clouddn.com/background.png" alt="offer模板">
+    <img src="http://7qna7i.com1.z0.glb.clouddn.com/back4433.png" alt="offer模板" class="bg">
     <div class="content">
       <div class="username primary" v-text="data.username"></div>
       <div class="department primary" v-text="data.department"></div>
@@ -17,6 +17,14 @@
       <div class="phone primary" v-text="data.contact.phone">15921611141</div>
       <div class="pay primary" v-text="data.treatment.money">10000</div>
       <div class="food primary" v-text="data.treatment.food">380</div>
+      <div class="inscribe white">
+        <span class="inscribe-year" v-text="inscribeYear"></span>
+        <span class="inscribe-month" v-text="inscribeMonth">七</span>
+        <span class="inscribe-day" v-text="inscribeDay">一</span>
+      </div>
+      <div class="order">
+        <img src="http://7qna7i.com1.z0.glb.clouddn.com/order.png" alt="饿了么工章">
+      </div>
     </div>
   </div>
   <eleme-aside :data.sync="data" :is-preview.sync="isPreview" v-show="showAside" v-if="!isPreview"></eleme-aside>
@@ -37,6 +45,14 @@
     font-size: 24px;
   }
 
+  .white {
+    position: absolute;
+    overflow: hidden;
+    text-align: left;
+    color: #fff;
+    font-size: 22px;
+  }
+
   .offer {
     max-width: 1280px;
     margin: 0 auto;
@@ -44,7 +60,7 @@
     position: relative;
   }
 
-  .offer img {
+  .offer img.bg {
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -138,6 +154,37 @@
     top: 1534px;
     right: 504px;
   }
+
+  .inscribe {
+    top: 2422px;
+    right: 74px;
+  }
+
+  .inscribe-year {
+    letter-spacing: 10px;
+  }
+
+  .inscribe-month {
+    width: 80px;
+  }
+
+  .inscribe-day {
+    width: 100px;
+  }
+
+  .order {
+    position: absolute;
+    width: 245px;
+    top: 2280px;
+    right: 90px;
+  }
+
+  .order img {
+    display: block;
+    position: relative;
+    z-index: 99;
+    width: 100%;
+  }
 </style>
 
 <script>
@@ -154,6 +201,7 @@
           contract: 3,
           probation: 4,
           report: new Date(),
+          inscribe: new Date('2016-7-1'),
           contact: {
             department: '人力与服务交付中心',
             user: '唐美玲',
@@ -185,13 +233,47 @@
 
       reportDay() {
         return this.data.report.getDate();
+      },
+
+      inscribeYear() {
+        let year = this.data.inscribe.getFullYear();
+        return `${this.numberToChinese(year)}年`;
+      },
+
+      inscribeMonth() {
+        let month = this.data.inscribe.getMonth() + 1;
+        return `${this.numberToChinese(month)} 月`;
+      },
+
+      inscribeDay() {
+        let day = this.data.inscribe.getDate();
+        return `${this.numberToChinese(day)} 日`;
       }
     },
 
     methods: {
       numberToChinese(num) {
-        let chnNumChar = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
-        return chnNumChar[num];
+        let chnNumChar = [ 'O', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+
+        if (num > 0 && num < 11) {
+          return chnNumChar[num];
+        } else if (num > 9 && num < 32) {
+          let m = Math.floor(num / 10);
+          let n = num % 10;
+          if (num > 9 && num < 20) {
+            return `十${chnNumChar[n]}`;
+          } else if ((num > 20 && num < 30) || (num > 30 && num < 32)) {
+            return `${chnNumChar[m]}十${chnNumChar[n]}`;
+          } else if (num === 20 || num === 30) {
+            return `${chnNumChar[m]}十`;
+          }
+        } else {
+          let ns = '';
+          let numArray = String(num).split('').map(k => Number(k));
+
+          numArray.forEach(k => { ns += chnNumChar[k];});
+          return ns;
+        }
       }
     }
   };

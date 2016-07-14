@@ -34,6 +34,9 @@
       <el-form-item :label-width="formWidth" label="餐补">
         <el-input :model.sync="data.treatment.food" auto-complete="off"></el-input>
       </el-form-item>
+      <el-form-item :label-width="formWidth" label="落款日期">
+        <el-date-editor type="date" :value.sync="data.inscribe" placeholder="修改落款日期" style="width: 100%;"></el-date-editor>
+      </el-form-item>
       <el-form-item :label-width="formWidth">
         <el-button type="primary">简历预览</el-button>
       </el-form-item>
