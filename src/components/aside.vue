@@ -74,8 +74,11 @@
           useCORS: true,
           onrendered: function(canvas) {
             var myImage = canvas.toDataURL('image/png');
-            window.open(myImage);
-            location.reload();
+            var link = document.createElement('a');
+            link.href = myImage;
+            link.id = 'image-link';
+            document.body.appendChild(link);
+            document.getElementById('image-link').click();
           }
         });
       }
