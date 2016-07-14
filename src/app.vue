@@ -1,7 +1,7 @@
 <template>
   <eleme-header :show-aside.sync="showAside" v-if="!isPreview"></eleme-header>
   <div class="offer">
-    <img src="http://7qna7i.com1.z0.glb.clouddn.com/bg.png" alt="offer模板">
+    <img src="http://7qna7i.com1.z0.glb.clouddn.com/background.png" alt="offer模板">
     <div class="content">
       <div class="username primary" v-text="data.username"></div>
       <div class="department primary" v-text="data.department"></div>
@@ -33,7 +33,7 @@
     position: absolute;
     overflow: hidden;
     text-align: center;
-    color: #0072b5;
+    color: #007fd0;
     font-size: 24px;
   }
 
@@ -99,18 +99,18 @@
 
   .contract {
     width: 44px;
-    top: 270px;
-    left: 464px;
+    top: 268px;
+    left: 560px;
   }
 
   .probation {
     width: 44px;
-    top: 270px;
-    right: 276px;
+    top: 268px;
+    right: 182px;
   }
 
   .contact {
-    width: 120px;
+    width: 220px;
     top: 1152px;
     left: 560px;
   }
@@ -129,13 +129,13 @@
 
   .pay {
     width: 114px;
-    top: 1515px;
+    top: 1534px;
     left: 480px;
   }
 
   .food {
     width: 44px;
-    top: 1515px;
+    top: 1534px;
     right: 504px;
   }
 </style>
@@ -155,7 +155,7 @@
           probation: 4,
           report: new Date(),
           contact: {
-            department: '人力资源',
+            department: '人力与服务交付中心',
             user: '唐美玲',
             phone: '15921611141'
           },
