@@ -73,12 +73,13 @@
           logging: true,
           useCORS: true,
           onrendered: function(canvas) {
-            var myImage = canvas.toDataURL('image/png');
-            var link = document.createElement('a');
+            let myImage = canvas.toDataURL('image/png');
+            let link = document.createElement('a');
             link.href = myImage;
             link.id = 'image-link';
             document.body.appendChild(link);
             document.getElementById('image-link').click();
+            document.body.removeChild(link);
           }
         });
       }

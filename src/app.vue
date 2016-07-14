@@ -33,7 +33,7 @@
     position: absolute;
     overflow: hidden;
     text-align: center;
-    color: #0880bf;
+    color: #0072b5;
     font-size: 24px;
   }
 
