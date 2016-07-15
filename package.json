@@ -5,9 +5,9 @@
   "private": false,
   "keywords": [],
   "scripts": {
-    "dev": "cooking watch",
-    "dist": "cooking build -p",
-    "deploy": "cooking build --no-color"
+    "dev": "cooking watch -c ./configs/cooking.conf.js",
+    "dist": "cooking build -p -c ./configs/cooking.conf.js",
+    "deploy": "cooking build --no-color -c ./configs/cooking.deploy.conf.js"
   },
   "license": "ISC",
   "dependencies": {

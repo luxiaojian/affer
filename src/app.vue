@@ -188,6 +188,8 @@
 </style>
 
 <script>
+  import SSO_HOST from './sso';
+
   export default {
     data() {
       return {
@@ -274,6 +276,12 @@
           numArray.forEach(k => { ns += chnNumChar[k];});
           return ns;
         }
+      }
+    },
+
+    ready() {
+      if (!~document.cookie.indexOf('COFFEE_TOKEN')) {
+        location.href = `http://${SSO_HOST}/sso/login?from=${location.href}`;
       }
     }
   };

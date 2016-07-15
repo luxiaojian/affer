@@ -7,21 +7,17 @@ cooking.set({
     vendor: ['vue']
   },
   dist: './dist',
-  // template: './src/index.tpl',
   template: {
     '../index.html': './src/index.tpl'
   },
 
   devServer: {
-    port: 8080,
-    log: false,
-    publicPath: '/'
+    enable: false
   },
 
   // production
   clean: true,
   hash: true,
-  sourceMap: true,
   chunk: 'vendor',
   publicPath: './dist',
   assetsPath: '/dist',
