@@ -52,6 +52,7 @@
     bottom: 0;
     background: #fff;
     display: fixed;
+    z-index: 999;
     width: 360px;
     overflow-x: hidden;
     overflow-y: scroll;
