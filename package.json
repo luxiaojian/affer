@@ -16,5 +16,12 @@
     "html2canvas": "^0.5.0-alpha1",
     "vue": "*"
   },
+  "faas": {
+    "domain": "affer",
+    "public": "dist",
+    "description": "faas dashboard",
+    "author_name": "huijian.lu",
+    "author_email": "huijian.lu@ele.me"
+  },
   "devDependencies": {}
 }
