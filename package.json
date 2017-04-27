@@ -11,8 +11,8 @@
   },
   "license": "ISC",
   "dependencies": {
-    "element-ui": "^0.1.8",
-    "es6-promise": "^3.2.1",
+    "element-ui": "^1.2.9",
+    "es6-promise": "^4.1.0",
     "html2canvas": "^0.5.0-alpha1",
     "vue": "*"
   },
